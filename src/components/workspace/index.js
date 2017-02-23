@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import marked from 'marked';
 
 import Pane from './sub-components/pane';
@@ -126,7 +126,7 @@ class Workspace extends Component {
     return (
       <div className={ style.workspace }>
         <Pane
-          notebook={ praps.notebook }
+          notebook={ this.props.activeNotebook }
           notes={ praps.notes }
         />
         <Editor
@@ -138,4 +138,7 @@ class Workspace extends Component {
   }
 }
 
+Workspace.propTypes = {
+  activeNotebook: PropTypes.shape()
+};
 export default Workspace;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import Workspace from 'components/workspace/index.js';
+import Workspace from 'containers/workspace-container';
 import App from 'containers/app-container';
 
 export default (

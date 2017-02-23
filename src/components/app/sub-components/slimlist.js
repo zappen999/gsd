@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import PlusIcon from 'material-ui/svg-icons/content/add';
 
@@ -10,14 +10,14 @@ class Slimlist extends Component {
       <div className={ style.slimlist }>
         <FloatingActionButton
           onClick={ this.props.onCreateNotebookClick }
-          mini={ true }
           className={ style.item }
+          mini
         >
           <PlusIcon />
         </FloatingActionButton>
-        { this.props.notebooks.map(function (notebook) {
-          return (
+        { this.props.notebooks.map(notebook => (
             <FloatingActionButton
+              onClick={ () => this.props.onSelectNotebookClick(notebook.id) }
               key={ notebook.id }
               mini={ true }
               secondary={ true }
@@ -27,11 +27,17 @@ class Slimlist extends Component {
                 { notebook.name[0].toUpperCase() }
               </span>
             </FloatingActionButton>
-          );
-        })}
+          )
+        ) }
       </div>
     );
   }
 }
+
+Slimlist.propTypes = {
+  onCreateNotebookClick: PropTypes.func.isRequired,
+  onSelectNotebookClick: PropTypes.func.isRequired,
+  notebooks: PropTypes.array
+};
 
 export default Slimlist;
