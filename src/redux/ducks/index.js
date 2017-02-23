@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { reducer as appDuck } from './app/duck';
+import { reducer as app } from './app/duck';
 
 export default combineReducers({
-  appDuck
+  app
 });

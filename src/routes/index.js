@@ -1,14 +1,12 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import About from 'components/about/index.js';
-import Purpose from 'components/purpose/index.js';
-import App from 'components/app/app.js';
+import Workspace from 'components/workspace/index.js';
+import App from 'containers/app-container';
 
 export default (
   <Route path='/' component={ App }>
-    <IndexRoute component={ About } />
-    <Route path='/about' component={ About } />
-    <Route path='/purpose' component={ Purpose } />
+    <IndexRoute component={ Workspace } />
+    <Route path='/note' component={ Workspace } />
   </Route>
 );

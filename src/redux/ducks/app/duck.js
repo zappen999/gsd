@@ -1,25 +1,17 @@
 // Action types
-const SET_SOME_PROP = 'SET_SOME_PROP';
-const SET_ANOTHER_PROP = 'SET_ANOTHER_PROP';
+const TOGGLE_NEW_NOTEBOOK_MODAL = 'TOGGLE_NEW_NOTEBOOK_MODAL';
 
 const initialState = {
-  someProp: 'someValue',
-  anotherProp: 'anotherValue'
+  newNotebookModalVisible: false
 };
 
 // Reducer
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case SET_SOME_PROP:
+    case TOGGLE_NEW_NOTEBOOK_MODAL:
        return {
          ...state,
-         someProp: action.someProp
-      };
-
-    case SET_ANOTHER_PROP:
-       return {
-         ...state,
-         anotherProp: action.anotherProp
+         newNotebookModalVisible: action.newNotebookModalVisible
       };
 
     default:
@@ -28,22 +20,14 @@ export function reducer(state = initialState, action) {
 }
 
 // Action creators
-export function setSomeProp(someProp) {
+export function toggleNewNotebookModal(visible) {
   return {
-    type: SET_SOME_PROP,
-    someProp
-  };
-}
-
-export function setAnotherProp(anotherProp) {
-  return {
-    type: SET_ANOTHER_PROP,
-    anotherProp
+    type: TOGGLE_NEW_NOTEBOOK_MODAL,
+    newNotebookModalVisible: visible
   };
 }
 
 // Export all actionCreators
 export const actions = {
-  setSomeProp,
-  setAnotherProp
-}
+  toggleNewNotebookModal
+};
