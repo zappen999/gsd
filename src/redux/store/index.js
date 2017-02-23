@@ -1,5 +1,6 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import rootDuck from '../ducks';
+import thunk from 'redux-thunk';
 
 export default function configureStore() {
   let enhancerSettings;
@@ -10,7 +11,8 @@ export default function configureStore() {
 
   let store = createStore(
     rootDuck,
-    compose(enhancerSettings)
+    compose(enhancerSettings),
+    applyMiddleware(thunk)
   );
 
   if (module.hot) {
