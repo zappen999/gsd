@@ -11,6 +11,7 @@ var config = {
     alias: {
       routes: path.join(__dirname, 'src', 'routes'),
       components: path.join(__dirname, 'src', 'components'),
+      containers: path.join(__dirname, 'src', 'containers'),
       server: path.join(__dirname, 'src', 'server'),
       utils: path.join(__dirname, 'src', 'utils'),
       resources: path.join(__dirname, 'src', 'resources'),
