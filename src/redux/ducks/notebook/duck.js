@@ -1,9 +1,11 @@
 // Action types
+const TOGGLE_NEW_NOTEBOOK_MODAL = 'TOGGLE_NEW_NOTEBOOK_MODAL';
 const SELECT_ACTIVE_NOTEBOOK = 'SELECT_ACTIVE_NOTEBOOK';
 const CREATING_NOTEBOOK = 'CREATING_NOTEBOOK';
 const CREATED_NOTEBOOK = 'CREATED_NOTEBOOK';
 
 const initialState = {
+  newNotebookModalVisible: false,
   notebooks: [
     { name: 'Action pending', id: 1 },
     { name: 'Boom', id: 2 },
@@ -17,6 +19,12 @@ const initialState = {
 // Reducer
 export function reducer(state = initialState, action) {
   switch (action.type) {
+    case TOGGLE_NEW_NOTEBOOK_MODAL:
+       return {
+         ...state,
+         newNotebookModalVisible: action.newNotebookModalVisible
+      };
+
     case SELECT_ACTIVE_NOTEBOOK:
       return {
         ...state,
@@ -34,9 +42,9 @@ export function reducer(state = initialState, action) {
     case CREATED_NOTEBOOK:
       return {
         ...state,
+        newNotebookModalVisible: false ,// TODO: DOESNT WORK
         isCreatingNotebook: false,
-        notebooks: [...state.notebooks, action.notebook],
-        newNotebookModalVisible: false // TODO: DOESNT WORK
+        notebooks: [...state.notebooks, action.notebook]
       };
 
     default:
@@ -45,6 +53,13 @@ export function reducer(state = initialState, action) {
 }
 
 // Action creators
+export function toggleNewNotebookModal(visible) {
+  return {
+    type: TOGGLE_NEW_NOTEBOOK_MODAL,
+    newNotebookModalVisible: visible
+  };
+}
+
 export function selectActiveNotebook(notebookId) {
   return {
     type: SELECT_ACTIVE_NOTEBOOK,
@@ -52,15 +67,11 @@ export function selectActiveNotebook(notebookId) {
   };
 }
 
-export function isCreatingNotebook() {
-  return {
-    type: CREATING_NOTEBOOK
-  };
-}
-
 export function createNotebook(name) {
   return dispatch => {
-    dispatch(isCreatingNotebook());
+    dispatch({
+      type: CREATING_NOTEBOOK
+    });
 
     // Perform API request here
     setTimeout(() => {
@@ -77,6 +88,7 @@ export function createNotebook(name) {
 
 // Export all actionCreators
 export const actions = {
+  toggleNewNotebookModal,
   selectActiveNotebook,
   createNotebook
 };

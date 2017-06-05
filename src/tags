@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+$.fn.simulate	utils/test-helper.js	/^}$/;"	f
+DESCRIPTION	config/index.js	/^  TITLE: 'snabb',$/;"	p	class:module.exports
+FILES	config/index.js	/^  MOUNTING_POINT: 'app',$/;"	p	class:module.exports
+MOUNTING_POINT	config/index.js	/^  DESCRIPTION: 'Barebone application renderd server-side, react, react-router, CSS-modules.',$/;"	p	class:module.exports
+TITLE	config/index.js	/^module.exports = {$/;"	p	class:module.exports
+activeNotebook	components/workspace/index.js	/^Workspace.propTypes = {$/;"	p	class:Workspace.propTypes
+children	components/app/app.js	/^App.propTypes = {$/;"	p	class:App.propTypes
+content	components/workspace/index.js	/^    this.state = {$/;"	p	class:state
+newNotebookModalVisible	redux/ducks/app/duck.js	/^const initialState = {$/;"	p	class:const
+newNotebookModalVisible	redux/ducks/notebook/duck.js	/^const initialState = {$/;"	p	class:const
+notebook	components/workspace/sub-components/pane.js	/^Pane.propTypes = {$/;"	p	class:Pane.propTypes
+notebookName	components/app/sub-components/create-notebook-dialog.js	/^    this.state = {$/;"	p	class:state
+notebooks	redux/ducks/notebook/duck.js	/^  newNotebookModalVisible: false,$/;"	p	class:const
+onChange	components/workspace/sub-components/editor.js	/^Editor.propTypes = {$/;"	p	class:Editor.propTypes
+onClose	components/app/sub-components/create-notebook-dialog.js	/^CreateNotebookDialog.propTypes = {$/;"	p	class:CreateNotebookDialog.propTypes
+onCreateNotebookClick	components/app/sub-components/slimlist.js	/^Slimlist.propTypes = {$/;"	p	class:Slimlist.propTypes
+simulate	utils/test-helper.js	/^$.fn.simulate = function simulate(eventName, value) {$/;"	f
+text	components/common/pill/index.js	/^Pill.propTypes = {$/;"	p	class:Pill.propTypes
+userAgent	utils/test-helper.js	/^global.navigator = {$/;"	p	class:global.navigator

@@ -1,4 +1,5 @@
 // Action types
+// TODO: NOT USED
 const TOGGLE_NEW_NOTEBOOK_MODAL = 'TOGGLE_NEW_NOTEBOOK_MODAL';
 
 const initialState = {
